@@ -1,0 +1,56 @@
+name: Lesson 06 queue
+version: 1
+author: esp32-learning
+steps:
+  - wait-serial: 'lesson 06 ready'
+  - set-control:
+      part-id: btn1
+      name: pressed
+      value: 1
+  - delay: 80ms
+  - set-control:
+      part-id: btn1
+      name: pressed
+      value: 0
+  - delay: 80ms
+  - set-control:
+      part-id: btn1
+      name: pressed
+      value: 1
+  - delay: 80ms
+  - set-control:
+      part-id: btn1
+      name: pressed
+      value: 0
+  - delay: 80ms
+  - set-control:
+      part-id: btn1
+      name: pressed
+      value: 1
+  - delay: 80ms
+  - set-control:
+      part-id: btn1
+      name: pressed
+      value: 0
+  - delay: 80ms
+  - set-control:
+      part-id: btn1
+      name: pressed
+      value: 1
+  - delay: 80ms
+  - set-control:
+      part-id: btn1
+      name: pressed
+      value: 0
+  - delay: 80ms
+  - set-control:
+      part-id: btn1
+      name: pressed
+      value: 1
+  - delay: 80ms
+  - set-control:
+      part-id: btn1
+      name: pressed
+      value: 0
+  - delay: 80ms
+  - wait-serial: 'fifth click'

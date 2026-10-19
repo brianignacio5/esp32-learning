@@ -1,0 +1,13 @@
+name: Lesson 09 dht22
+version: 1
+author: esp32-learning
+steps:
+  - set-control:
+      part-id: dht1
+      name: temperature
+      value: 25.5
+  - set-control:
+      part-id: dht1
+      name: humidity
+      value: 40
+  - wait-serial: 'temp_c_x10=255 humidity_x10=400'

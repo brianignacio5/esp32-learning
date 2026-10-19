@@ -1,0 +1,13 @@
+name: Lesson 14 weather node
+version: 1
+author: esp32-learning
+steps:
+  - set-control:
+      part-id: dht1
+      name: temperature
+      value: 25.5
+  - set-control:
+      part-id: dht1
+      name: humidity
+      value: 40
+  - wait-serial: 'published {"temp_c":25.5,"humidity":40,"boot":1}'

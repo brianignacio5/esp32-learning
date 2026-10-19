@@ -1,0 +1,5 @@
+name: Lesson 12 json
+version: 1
+author: esp32-learning
+steps:
+  - wait-serial: 'json {"temp_c":25.5,"humidity":40,"boot":3}'

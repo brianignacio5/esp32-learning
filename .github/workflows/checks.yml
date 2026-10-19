@@ -1,0 +1,53 @@
+name: checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  host-tests:
+    name: Host tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    container:
+      image: espressif/idf:v6.0.3
+    env:
+      IDF_CCACHE_ENABLE: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Test reference solutions
+        shell: bash
+        run: |
+          set -euo pipefail
+          . "${IDF_PATH}/export.sh"
+          ./scripts/check-lesson.sh all --solution
+
+  wokwi:
+    name: Wokwi scenarios
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    container:
+      image: espressif/idf:v6.0.3
+    env:
+      IDF_CCACHE_ENABLE: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Simulate reference solutions
+        shell: bash
+        env:
+          WOKWI_CLI_TOKEN: ${{ secrets.WOKWI_CLI_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ -z "${WOKWI_CLI_TOKEN}" ]; then
+            echo "WOKWI_CLI_TOKEN is not set; skipping simulator checks."
+            exit 0
+          fi
+          curl -fsSL -o /tmp/wokwi-cli.tar.gz \
+            https://github.com/wokwi/wokwi-cli/releases/latest/download/wokwi-cli-linux-x64.tar.gz
+          mkdir -p /tmp/wokwi
+          tar -xzf /tmp/wokwi-cli.tar.gz -C /tmp/wokwi
+          install -m 755 "$(find /tmp/wokwi -type f -name wokwi-cli -print -quit)" /usr/local/bin/wokwi-cli
+          . "${IDF_PATH}/export.sh"
+          ./scripts/check-lesson.sh all --solution --wokwi

@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "espressif.esp-idf-extension",
+    "wokwi.wokwi-vscode",
+    "llvm-vs-code-extensions.vscode-clangd"
+  ]
+}

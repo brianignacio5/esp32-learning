@@ -1,0 +1,5 @@
+name: Lesson 08 adc
+version: 1
+author: esp32-learning
+steps:
+  - wait-serial: 'adc percent='

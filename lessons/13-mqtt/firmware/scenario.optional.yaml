@@ -1,0 +1,5 @@
+name: Lesson 13 mqtt smoke
+version: 1
+author: esp32-learning
+steps:
+  - wait-serial: 'mqtt published'

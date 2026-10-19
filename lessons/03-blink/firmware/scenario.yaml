@@ -1,0 +1,14 @@
+name: Lesson 03 blink
+version: 1
+author: esp32-learning
+steps:
+  - wait-serial: 'led on'
+  - expect-pin:
+      part-id: esp
+      name: 2
+      value: 1
+  - wait-serial: 'led off'
+  - expect-pin:
+      part-id: esp
+      name: 2
+      value: 0

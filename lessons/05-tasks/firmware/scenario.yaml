@@ -1,0 +1,7 @@
+name: Lesson 05 tasks
+version: 1
+author: esp32-learning
+steps:
+  - wait-serial: 'tasks started'
+  - wait-serial: 'tick'
+  - wait-serial: 'led on'

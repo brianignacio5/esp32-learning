@@ -1,0 +1,5 @@
+name: Lesson 13 mqtt boot
+version: 1
+author: esp32-learning
+steps:
+  - wait-serial: 'lesson 13 ready'

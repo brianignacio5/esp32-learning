@@ -1,0 +1,5 @@
+name: Lesson 10 wifi
+version: 1
+author: esp32-learning
+steps:
+  - wait-serial: 'got ip'

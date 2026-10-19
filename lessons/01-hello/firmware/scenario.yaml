@@ -1,0 +1,6 @@
+name: Lesson 01 hello
+version: 1
+author: esp32-learning
+steps:
+  - wait-serial: 'lesson 01 ready'
+  - wait-serial: 'ESP32'

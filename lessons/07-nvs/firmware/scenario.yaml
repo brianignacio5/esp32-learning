@@ -1,0 +1,10 @@
+name: Lesson 07 nvs
+version: 1
+author: esp32-learning
+steps:
+  - wait-serial: 'boot_count=1'
+  - wait-serial: 'led_state=1'
+  - expect-pin:
+      part-id: esp
+      name: 2
+      value: 1

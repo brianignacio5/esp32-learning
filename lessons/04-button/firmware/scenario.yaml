@@ -1,0 +1,30 @@
+name: Lesson 04 button
+version: 1
+author: esp32-learning
+steps:
+  - wait-serial: 'lesson 04 ready'
+  - set-control:
+      part-id: btn1
+      name: pressed
+      value: 1
+  - delay: 80ms
+  - wait-serial: 'led on'
+  - expect-pin:
+      part-id: esp
+      name: 2
+      value: 1
+  - set-control:
+      part-id: btn1
+      name: pressed
+      value: 0
+  - delay: 80ms
+  - set-control:
+      part-id: btn1
+      name: pressed
+      value: 1
+  - delay: 80ms
+  - wait-serial: 'led off'
+  - expect-pin:
+      part-id: esp
+      name: 2
+      value: 0
